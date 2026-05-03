@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bypxdjqsn68fn"]
+
+[ext_resource type="Shader" uid="uid://cnqkd0oxspr1x" path="res://assets/Shaders/train_glass.gdshader" id="1_b8h0u"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b8h0u")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color_coat = 0.0
+shader_parameter/oilyness = 0.1
+shader_parameter/rim_amount = 0.4
+shader_parameter/rim_shape = 4.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/refraction_strength = 0.009999977424480111
+shader_parameter/blur_amount = 0.10000000149012
+shader_parameter/roughness_affect = 0.0
+shader_parameter/roughness = 0.2

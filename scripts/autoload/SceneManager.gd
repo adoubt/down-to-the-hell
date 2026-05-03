@@ -1,0 +1,63 @@
+extends Node
+
+# Жёстко прописанные пути сцен
+const SCENES := {
+	"Intro": "res://scenes/intro.tscn",
+	"MainMenu": "res://ui/main_menu.tscn",
+	"Lobby": "res://scenes/Lobby.tscn",
+}
+
+# текущая сцена
+var current_scene_name: String = "Intro"
+
+# ---------------- PUBLIC API ----------------
+
+func go_to_intro():
+	_change_scene("Intro")
+	
+	
+func go_to_main_menu():
+	_change_scene("MainMenu")
+	AudioManager.play_music_delayed("main_menu",1.0,-5.0)
+	
+func go_to_lobby():
+	_change_scene("Lobby")
+
+	
+func _go_to_big_room_test():
+	_change_scene("BigRoomTest")
+
+	
+func restart_current():
+	_change_scene(current_scene_name)
+
+	
+func exit():
+	get_tree().quit()
+	
+# ---------------- INTERNAL ----------------
+
+func _change_scene(_name: String):
+	if not SCENES.has(_name):
+		push_error("SceneManager: сцена не найдена: %s" % _name)
+		return
+	current_scene_name = _name
+	#ControllerManager.refresh()
+	get_tree().change_scene_to_file(SCENES[_name])
+	UIManager.close_all()
+	_update_ui_for_scene()
+	AudioManager.reset_audio_context()
+	AudioManager.stop_all_music()
+	
+func _update_ui_for_scene():
+	
+	# форс курсор через UIManager
+	if current_scene_name in ["MainMenu"]:
+		UIManager.force_cursor_visible = true
+	else:
+		UIManager.force_cursor_visible = false
+	UIManager._update_ui_state()
+	if current_scene_name in ["BigRoomTest","GameTest"]:
+		UIManager.open_panel("HUD")
+	else:
+		UIManager.close_panel("HUD")

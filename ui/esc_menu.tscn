@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://54acn1s50ndy"]
+
+[ext_resource type="Script" uid="uid://wux3liqpy4gn" path="res://UI/esc_menu.gd" id="1_4yblc"]
+[ext_resource type="Theme" uid="uid://2ocoy8vsxdat" path="res://assets/themes/tab_settings.tres" id="1_5t328"]
+[ext_resource type="FontFile" uid="uid://di0y2hkhnmvr0" path="res://assets/fonts/SFPRODISPLAYLIGHTITALIC.OTF" id="2_7ucxq"]
+[ext_resource type="Material" uid="uid://b6jm1dn3iwhm1" path="res://assets/Materials/DarkenedBlur.tres" id="2_011l0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5t328"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 58
+corner_radius_top_right = 68
+corner_radius_bottom_right = 68
+corner_radius_bottom_left = 70
+shadow_color = Color(0, 0, 0, 0.5647059)
+shadow_size = 86
+
+[sub_resource type="Theme" id="Theme_ljgwf"]
+default_font = ExtResource("2_7ucxq")
+
+[node name="Escape" type="Control" unique_id=1654782770]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5t328")
+script = ExtResource("1_4yblc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=25346073]
+visible = false
+material = ExtResource("2_011l0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1631836830]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 6.0
+offset_right = 778.0
+offset_bottom = 654.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=755967377]
+layout_mode = 2
+text = "Continue"
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=426891726]
+layout_mode = 2
+text = "Restart"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1326088414]
+layout_mode = 2
+text = "Settings"
+
+[node name="Menu" type="Button" parent="VBoxContainer" unique_id=520994345]
+layout_mode = 2
+text = "Menu"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1876041174]
+layout_mode = 2
+text = "Exit"
+
+[node name="Panel" type="Panel" parent="." unique_id=503978033]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037326388
+anchor_top = 0.582
+anchor_right = 0.157
+anchor_bottom = 0.7569444
+offset_top = -0.13604736
+offset_right = 0.13598633
+offset_bottom = -11.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5t328")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=329794629]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ljgwf")
+text = "Move - WASD
+Jump - Space 
+Q - Hat
+Tab - Map 
+V - GUI
+N - Hat Camera
+F2 - Console"
+fit_content = true
+tab_size = 5
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

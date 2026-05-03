@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://d326s3hrfhhj2"]
+
+[ext_resource type="Script" uid="uid://dtwgqcmr8gd4a" path="res://scenes/lobby.gd" id="1_6jt0u"]
+[ext_resource type="Script" uid="uid://bgdta44hs0qy2" path="res://scripts/unsorted/wagons.gd" id="2_ras1x"]
+[ext_resource type="PackedScene" uid="uid://bidpdrk4mgwih" path="res://scenes/wagon.tscn" id="3_oeg6l"]
+[ext_resource type="Material" uid="uid://cn63dg0g67emc" path="res://assets/Materials/rigman_eye_mat.tres" id="4_qbi84"]
+[ext_resource type="Script" uid="uid://biredo5xsb3ke" path="res://scripts/unsorted/simulation.gd" id="5_oeg6l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oeg6l"]
+size = Vector3(500, 1, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cdhm0"]
+size = Vector3(500, 1, 500)
+
+[node name="Lobby" type="Node3D" unique_id=1556604420]
+script = ExtResource("1_6jt0u")
+
+[node name="Wagons" type="Node3D" parent="." unique_id=741794615]
+script = ExtResource("2_ras1x")
+
+[node name="Wagon" parent="Wagons" unique_id=1777635789 instance=ExtResource("3_oeg6l")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Wagons/Wagon" unique_id=1137409183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.771996, 2.8363864)
+light_color = Color(0.96862745, 0.7647059, 0, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Wagons/Wagon" unique_id=199141563]
+transform = Transform3D(0.9879328, -0.09831971, -0.119674295, 0.09905844, 0.99508154, 0.00022513022, 0.11906353, -0.012077162, 0.9928131, -0.12495804, 5.2175865, -6.5020847)
+visible = false
+spot_range = 57.851097
+spot_angle = 38.973938
+
+[node name="Wagon2" parent="Wagons" unique_id=579134591 instance=ExtResource("3_oeg6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.83033)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Wagons/Wagon2" unique_id=1263520260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36150646, 2.2420769, 0.08290768)
+light_color = Color(0.50204325, 0.8919056, 0.6438263, 1)
+
+[node name="Wagon3" parent="Wagons" unique_id=2023176860 instance=ExtResource("3_oeg6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.494026)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Wagons/Wagon3" unique_id=606241704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4666748, 0.74518585)
+light_color = Color(0.2, 0.34901962, 0.8039216, 1)
+
+[node name="Wagon4" parent="Wagons" unique_id=371388307 instance=ExtResource("3_oeg6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.35038)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Wagons/Wagon4" unique_id=2104790042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4666748, -3.171814)
+light_color = Color(0.70289403, 0.16653374, 0.16813827, 1)
+
+[node name="Wagon5" parent="Wagons" unique_id=1271613492 instance=ExtResource("3_oeg6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55.24391)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Wagons/Wagon5" unique_id=131265671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4666748, -3.2776337)
+light_color = Color(0.39195824, 0.35836434, 0.5863413, 1)
+
+[node name="Wagon6" parent="Wagons" unique_id=1438070305 instance=ExtResource("3_oeg6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69.217896)
+
+[node name="Wagon7" parent="Wagons" unique_id=583555022 instance=ExtResource("3_oeg6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 82.912544)
+
+[node name="Simulation" type="Node3D" parent="." unique_id=1859194267]
+script = ExtResource("5_oeg6l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1088446122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.815, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1843777876]
+shape = SubResource("BoxShape3D_oeg6l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=234533270]
+material_override = ExtResource("4_qbi84")
+mesh = SubResource("BoxMesh_cdhm0")

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://puicaq8evo3w"]
+
+[ext_resource type="Shader" uid="uid://bpac4n0dsxts" path="res://assets/Shaders/cartoon_outline_shader.gdshader" id="1_ag7jq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ag7jq")
+shader_parameter/color = Color(0.9603811, 1.4836423, 0.83274865, 1)
+shader_parameter/size = 1.05

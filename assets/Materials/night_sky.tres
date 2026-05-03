@@ -1,0 +1,22 @@
+[gd_resource type="Environment" format=3 uid="uid://f5b0km3n8yim"]
+
+[ext_resource type="Sky" uid="uid://chle3jp3mirl1" path="res://assets/Materials/sky.tres" id="1_uhkc6"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_uhkc6")
+ambient_light_color = Color(0.50638646, 0.5179158, 0.72135246, 1)
+ambient_light_energy = 5.0
+tonemap_mode = 2
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_normalized = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.043951973, 0.043951914, 0.043951936, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_curve = 0.39229116
+fog_depth_begin = 30.0
+volumetric_fog_density = 0.1019
+volumetric_fog_length = 31.75

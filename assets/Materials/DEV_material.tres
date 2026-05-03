@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://44k0m2yb0cqg"]
+
+[ext_resource type="Texture2D" uid="uid://cr4xsfmob0q10" path="res://assets/pics/dev_texture.png" id="1_7nolw"]
+
+[resource]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.4129728, 0.7855738, 0.9516776, 1)
+albedo_texture = ExtResource("1_7nolw")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+disable_receive_shadows = true
