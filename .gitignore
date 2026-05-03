@@ -1,3 +1,27 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Godot cache / import
+.import/
+export.cfg
+export_presets.cfg
+.godot/*
+
+
+# Build / export
+bin/
+build/
+export/
+
+# Editor / OS мусор
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# IDE (опционально)
+.vscode/
+.idea/
+
+# Temp
+*.tmp
+*.temp
